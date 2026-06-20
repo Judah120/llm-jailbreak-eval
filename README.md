@@ -122,7 +122,7 @@ llm-jailbreak-eval/
 ## Quickstart
 
 ```bash
-git clone https://github.com/judahidowu/llm-jailbreak-eval
+git clone https://github.com/Judah120/llm-jailbreak-eval
 cd llm-jailbreak-eval
 pip install -r requirements.txt
 
