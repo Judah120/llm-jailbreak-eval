@@ -2,8 +2,8 @@
 
 > A structured framework for benchmarking the adversarial robustness of language model safety behaviour across attack categories.
 
-**Author:** Judah Idowu · [judahidowu.lovable.app](https://judahidowu.lovable.app) · [LinkedIn](https://linkedin.com/in/judah-idowu)  
-**Related:** [llm-injection-detector](https://github.com/judahidowu/llm-injection-detector) · [IoT Anomaly Detection (2025)](https://doi.org/10.13140/RG.2.2.23518.14408)
+**Author:** Judah Idowu · [LinkedIn](https://linkedin.com/in/judah-idowu)  
+**Related:** [llm-injection-detector](https://github.com/Judah120/llm-injection-detector) · [IoT Anomaly Detection (2025)](https://doi.org/10.13140/RG.2.2.23518.14408)
 
 ---
 
@@ -14,7 +14,7 @@ Evaluating how reliably a language model refuses adversarial inputs is a core re
 - Defines a **25-prompt adversarial suite** covering 8 attack categories and 4 severity levels
 - Scores each model response on a **0–3 resistance rubric** (full refusal → full compliance)
 - Benchmarks multiple model safety profiles comparatively
-- Measures **threshold sensitivity** — how failure rates change under different scoring definitions
+- Measures **threshold sensitivity**, which is how failure rates change under different scoring definitions
 - Includes a **HuggingFace API runner** for evaluation against real open-source models
 
 The harness is designed to be extended: add prompts, swap in new models, and reproduce results in under 5 minutes.
@@ -67,7 +67,7 @@ Which attack categories are hardest for each model type?
 
 **Key findings:**
 
-- **Persona injection** is the most variable category — the gap between strong and weak models is largest here, suggesting it is the dimension most sensitive to safety tuning quality
+- **Persona injection** is the most variable category. The gap between strong and weak models is largest here, suggesting it is the dimension most sensitive to safety tuning quality
 - **Encoded/obfuscated attacks** show a similar pattern, with weak models failing to recognise that leet-speak and Base64 payloads carry the same harmful intent as plaintext
 - **Authority escalation** remains difficult even for strongly safety-tuned models — false claims of administrative privilege or institutional identity are a persistent attack surface
 - **Legitimate queries** (safety boundary probing) are handled correctly across all profiles, indicating the harness does not conflate refusal quantity with safety quality
@@ -210,9 +210,3 @@ The resistance scoring methodology is informed by evaluation approaches from:
 3. **No mechanistic analysis**: This harness measures *whether* safety fails, not *why*. Mechanistic interpretability tools are needed to understand the internal dynamics of failure cases.
 
 4. **English only**: Multilingual attack vectors (a known gap in most safety evaluations) are not yet covered.
-
----
-
-## License
-
-MIT
